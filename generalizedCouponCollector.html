@@ -10,7 +10,7 @@
         <meta name="viewport" content="initial-scale=1, width=device-width">
         <meta name="handheldfriendly" content="true">
         
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="/static/css/main.css">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
@@ -36,7 +36,7 @@
             <header>
                 <br>
                 <h1>
-                    <a href="http://ishaanchawla.com" data-type="link" data-id="https://ishaanchawla.com">Ishaan Chawla</a>
+                    <a href="/" data-type="link" data-id="https://ishaanchawla.com">
                 </h1>
                 <nav>
                     <ul>
@@ -156,8 +156,8 @@
                     my formula was correct; the experimental averages indeed converged to my 
                     predicted result.
                     <figure class="image-container">
-                        <img src="{{ url_for('static', filename='images/exp1.1.png') }}" alt="first graph of expectation 1">
-                        <img src="{{ url_for('static', filename='images/exp1.2.png') }}" alt="second graph of expectation 1">
+                        <img src="/static/images/exp1.1.png" alt="first graph of expectation 1">
+                        <img src="/static/images/exp1.2.png" alt="second graph of expectation 1">
                     </figure>
                     <figcaption>Using varying values for \(t\) and \(p\). Both plots show strong convergence to predictions.</figcaption>
                     <br>
@@ -193,8 +193,8 @@
                     necessary before finding both colors. Once again, the experimental average converged to the results 
                     of my expected value calculations.
                     <figure class="image-container">
-                        <img src="{{ url_for('static', filename='images/exp2.1.png') }}" alt="first graph of expectation 2">
-                        <img src="{{ url_for('static', filename='images/exp2.2.png') }}" alt="second graph of expectation 2">
+                        <img src="/static/images/exp2.1.png" alt="first graph of expectation 2">
+                        <img src="/static/images/exp2.2.png" alt="second graph of expectation 2">
                     </figure>
                     <figcaption>Using varying values for \(a\) and \(b\). Both plots show strong convergence for the 2 colors case.</figcaption>
                     <br>
@@ -219,7 +219,7 @@
                     Sure enough, the experimental data showed this approach was wrong. My formula was overshooting the true 
                     expected value.
                     <figure class="image-container">
-                        <img src="{{ url_for('static', filename='images/expwrong.png') }}" alt="first graph of expectation 2">
+                        <img src="/static/images/expwrong.png" alt="first graph of expectation 2">
                     </figure>
                     <figcaption>This formula was wrong, above the true value by over 1.25 in this case.</figcaption>
                     <br>
@@ -249,8 +249,8 @@
                     This time, the simulations showed my formula was correct. Indeed, correcting for overcounting by considering 1 
                     color relative to the other 2 shifted the expectation down the correct amount.
                     <figure class="image-container">
-                        <img src="{{ url_for('static', filename='images/exp3.1.png') }}" alt="first graph of expectation 3">
-                        <img src="{{ url_for('static', filename='images/exp3.2.png') }}" alt="second graph of expectation 3">
+                        <img src="/static/images/exp3.1.png" alt="first graph of expectation 3">
+                        <img src="/static/images/exp3.2.png" alt="second graph of expectation 3">
                     </figure>
                     <figcaption> Varying values for \(a\), \(b\), and \(c\). Both plots show strong convergence to the predicted mean.</figcaption>
                     <br>
@@ -288,8 +288,8 @@
                     Once again, we see excellent convergence to predicted results. It's worth noting that, due to the exponential 
                     time complexity of working with all subsets of \(U\), \(n\) needs to be limited to around 25 or under.
                     <figure class="image-container">
-                        <img src="{{ url_for('static', filename='images/exp4.1.png') }}" alt="first graph of expectation for N colors">
-                        <img src="{{ url_for('static', filename='images/exp4.2.png') }}" alt="second graph of expectation for N colors">
+                        <img src="/static/images/exp4.1.png" alt="first graph of expectation for N colors">
+                        <img src="/static/images/exp4.2.png" alt="second graph of expectation for N colors">
                     </figure>
                     <figcaption> Varying \(n\), the total number of colors. The number of each color was randomly chosen in \([1, 50]\).</figcaption>
                     <br>
@@ -352,8 +352,8 @@
                     Once again, testing shows that the derived expression works incredibly well to predict the experimental results, 
                     i.e., I've found a working solution to the generalized coupon collector without replacement problem.
                     <figure class="image-container">
-                        <img src="{{ url_for('static', filename='images/exp5.1.png') }}" alt="first graph of expectation for K of N colors">
-                        <img src="{{ url_for('static', filename='images/exp5.2.png') }}" alt="second graph of expectation for K of N colors">
+                        <img src="/static/images/exp5.1.png" alt="first graph of expectation for K of N colors">
+                        <img src="/static/images/exp5.2.png" alt="second graph of expectation for K of N colors">
                     </figure>
                     <figcaption>Varying values of \(n\), the number of colors, and \(k\), the number of colors we wish to see. Again, the number of each color is chosen randomly in \([1, 50]\).</figcaption>
                     <br>
