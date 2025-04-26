@@ -208,3 +208,44 @@ nav ul li a:hover i {
 nav ul {
     gap: 30px;
 }
+
+/* Add better responsiveness for sections */
+@media (max-width: 700px) {
+    .container {
+        width: 100%;
+        min-width: 100%;
+        padding: 20px 15px; /* Reduce container padding */
+    }
+    
+    section#about, section#posts, .posts {
+        padding: 20px 15px 0; /* Reduce section padding */
+    }
+    
+    .image-container {
+        flex-direction: column; /* Stack images vertically */
+    }
+    
+    .image-container img {
+        width: 100%; /* Full width images on mobile */
+    }
+    
+    /* Ensure MathJax content stays within container */
+    .MathJax_Display {
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        font-size: 90% !important; /* Slightly reduce font size */
+    }
+}
+
+/* Fix general overflow issues */
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* Improve image responsiveness */
+img {
+    max-width: 100%;
+    height: auto;
+}
