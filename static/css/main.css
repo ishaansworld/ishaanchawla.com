@@ -249,3 +249,40 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+/* Add scrollable equation container */
+.equation-scroll {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1em 0;
+    padding: 0.5em 0;
+    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+  }
+  
+  /* Adjust MathJax rendering */
+  .MathJax_Display {
+    display: table !important;
+    margin: 0 auto !important;
+    width: auto !important;
+    min-width: min-content !important;
+  }
+  
+  /* Ensure container doesn't cause page overflow */
+  .centered-container {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+  
+  /* Media query for mobile equations */
+  @media (max-width: 700px) {
+    .centered-container {
+      display: block;  /* Change from flex on mobile */
+    }
+    
+    .centered-text {
+      padding: 10px 0;  /* Reduce padding */
+      width: 100%;
+      overflow-x: auto;
+    }
+  }
+  
