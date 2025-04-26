@@ -208,36 +208,3 @@ nav ul li a:hover i {
 nav ul {
     gap: 30px;
 }
-
-/* Fix for mobile width issues */
-html, body {
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
-}
-
-/* Ensure images don't overflow on mobile */
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Adjust image container for mobile */
-@media (max-width: 700px) {
-    .image-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .image-container img {
-        width: 90%;
-        margin-bottom: 10px;
-    }
-    
-    /* Adjust padding for content on mobile */
-    section#about, 
-    section#posts,
-    .posts {
-        padding: 20px 20px 0;
-    }
-}
