@@ -1,0 +1,153 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Ishaan Chawla",
+  description = "Projects and Writing by Ishaan Chawla",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Ishaan Chawla" />
+
+    <!-- Open Graph -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:type" content="website" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500&family=Big+Shoulders+Text:wght@200;300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <slot name="head" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Inline theme init: runs before paint to prevent flash -->
+    <script is:inline>
+      (function () {
+        var saved = localStorage.getItem("theme");
+        var theme = saved !== null ? saved : "light";
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  /* ─── Design Tokens ──────────────────────────────────── */
+  :root {
+    --c-bg: #f9f8f5;
+    --c-bg-2: #f2f0eb;
+    --c-text: #111110;
+    --c-muted: #78776e;
+    --c-border: #e4e1da;
+    --c-accent: #b5763a;
+    --c-accent-h: #8e5b28;
+
+    --f-serif: "Playfair Display", Georgia, serif;
+    --f-sans:  "Inter", system-ui, -apple-system, sans-serif;
+    --f-body:  "Big Shoulders Text", system-ui, sans-serif;
+    --f-mono:  "IBM Plex Mono", "Courier New", monospace;
+
+    --ease: cubic-bezier(0.25, 0, 0, 1);
+    --t: 0.2s;
+  }
+
+  [data-theme="dark"] {
+    --c-bg: #0c0c0a;
+    --c-bg-2: #161614;
+    --c-text: #f0eee9;
+    --c-muted: #8a8880;
+    --c-border: #2c2b28;
+    --c-accent: #d4924f;
+    --c-accent-h: #e8aa6a;
+  }
+
+  /* ─── Reset ──────────────────────────────────────────── */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background: var(--c-bg);
+    color: var(--c-text);
+    font-family: var(--f-sans);
+    font-size: 1rem;
+    line-height: 1.75;
+    min-height: 100dvh;
+    transition:
+      background-color var(--t) var(--ease),
+      color var(--t) var(--ease);
+  }
+
+  /* ─── Noise / Film Grain Overlay ─────────────────────── */
+  .noise {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.028;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 300px 300px;
+    background-repeat: repeat;
+  }
+
+  /* ─── Typography ─────────────────────────────────────── */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--f-serif);
+    line-height: 1.15;
+  }
+
+  /* ─── Base Links ─────────────────────────────────────── */
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* ─── Utility ────────────────────────────────────────── */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+</style>

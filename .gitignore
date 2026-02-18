@@ -13,12 +13,14 @@ desktop.ini
 node_modules/
 npm-debug.log
 yarn-error.log
-package-lock.json
 
 # Build output
 dist/
 build/
 out/
+
+# Astro generated cache
+.astro/
 
 # Environment variables
 .env
