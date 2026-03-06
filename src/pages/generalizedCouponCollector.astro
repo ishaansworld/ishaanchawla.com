@@ -108,12 +108,12 @@ const body = String.raw`
     <br><br>
     <b>Suppose, for some reason, we want to see both a valid and invalid ticket. Equivalently,
         say we are drawing balls of 2 colors out of an urn without replacement and want to see both
-        colors. On average, if we start with \(a\) amber balls and \(b\) blue balls, how many draws without
+        colors. On average, if we start with \(a\) amber balls and \(b\) brown balls, how many draws without
         replacement are needed before seeing both colors?
     </b>
     <br><br>
     This is actually a simple extension of the last problem. By the holes argument, we expect \(\frac{b}{a+1}\)
-    blue balls to appear before the first amber, and \(\frac{a}{b+1}\) amber balls to appear before the first blue.
+    brown balls to appear before the first amber, and \(\frac{a}{b+1}\) amber balls to appear before the first brown.
     Since the first ball drawn is always one color or the other, these two expectations add directly -
     there is no overlap to correct for, and our answer is simply their sum:
     <div>
@@ -139,7 +139,7 @@ const body = String.raw`
 
     <u>Extension to 3 Colors</u>
     <br><br>
-    <b> Now, we have \(a\) amber balls, \(b\) blue balls, and \(c\) copper balls in an
+    <b> Now, we have \(a\) amber balls, \(b\) brown balls, and \(c\) cyan balls in an
         urn. On average, how many draws must be made without replacement before drawing balls of all colors?
     </b>
     <br><br>
@@ -147,7 +147,7 @@ const body = String.raw`
     2 colors wouldn't work. This time, the last color to appear could not define the entire progression of colors;
     thus my cases, as I defined them, were no longer mutually exclusive.
     <br><br>
-    I tested my theory experimentally. For \(a\) amber balls, \(b\) blue balls, and \(c\) copper balls, I tried:
+    I tested my theory experimentally. For \(a\) amber balls, \(b\) brown balls, and \(c\) cyan balls, I tried:
     <div>
         \[
         \frac{a+b}{c+1} + \frac{a+c}{b+1} + \frac{b+c}{a+1}
@@ -169,7 +169,7 @@ const body = String.raw`
     Let's take the case of an amber ball coming out first or second. From this new perspective, it's clear that
     the \(\frac{a+b}{c+1} + \frac{a+c}{b+1}\) contribution to our sum is overcounting the expected number of amber balls.
     If we envision keeping the amber group at the front, it's clear that we overcounted the expected number of amber balls
-    appearing before blue and copper balls. Quantified, we overcounted by \(\frac{a}{b+c+1}\). Extending this logic to the
+    appearing before brown and cyan balls. Quantified, we overcounted by \(\frac{a}{b+c+1}\). Extending this logic to the
     other colors, we have:
     <div class="centered-container">
         <div class="centered-text">
