@@ -87,13 +87,6 @@ const projects = [
             ></path>
           </svg>
         </a>
-        <button
-          id="theme-toggle"
-          aria-label="Toggle color theme"
-          class="theme-toggle"
-        >
-          <span class="toggle-text">dark</span>
-        </button>
       </nav>
     </div>
   </header>
@@ -318,7 +311,7 @@ const projects = [
 
   /* ─── Hero ─────────────────────────────────────────── */
   .hero {
-    padding: 5.5rem 0 4.5rem;
+    padding: 4rem 0 4rem;
   }
 
   .hero h1 {
@@ -601,22 +594,3 @@ const projects = [
   }
 </style>
 
-<script>
-  const toggle = document.getElementById("theme-toggle");
-  const html = document.documentElement;
-  const text = toggle?.querySelector<HTMLElement>(".toggle-text");
-
-  function syncToggle(theme: string) {
-    if (text) text.textContent = theme === "light" ? "dark" : "light";
-  }
-
-  syncToggle(html.getAttribute("data-theme") ?? "light");
-
-  toggle?.addEventListener("click", () => {
-    const current = html.getAttribute("data-theme");
-    const next = current === "light" ? "dark" : "light";
-    html.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-    syncToggle(next);
-  });
-</script>

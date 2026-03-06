@@ -38,14 +38,6 @@ const {
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Inline theme init: runs before paint to prevent flash -->
-    <script is:inline>
-      (function () {
-        var saved = localStorage.getItem("theme");
-        var theme = saved !== null ? saved : "light";
-        document.documentElement.setAttribute("data-theme", theme);
-      })();
-    </script>
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -71,16 +63,6 @@ const {
 
     --ease: cubic-bezier(0.25, 0, 0, 1);
     --t: 0.2s;
-  }
-
-  [data-theme="dark"] {
-    --c-bg: #0c0c0a;
-    --c-bg-2: #161614;
-    --c-text: #f0eee9;
-    --c-muted: #8a8880;
-    --c-border: #2c2b28;
-    --c-accent: #d4924f;
-    --c-accent-h: #e8aa6a;
   }
 
   /* ─── Reset ──────────────────────────────────────────── */
