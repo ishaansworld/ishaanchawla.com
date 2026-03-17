@@ -31,7 +31,7 @@ const {
             inlineMath: [["\\(", "\\)"]],
             displayMath: [["\\[", "\\]"]],
           },
-          chtml: { mtextInheritFont: true, scale: 0.85 },
+          chtml: { mtextInheritFont: true },
         };
       </script>
       <script
@@ -216,11 +216,11 @@ const {
     font-family: var(--f-serif);
     font-style: italic;
     font-weight: 400;
-    font-size: clamp(1.75rem, 4vw, 2.75rem);
-    line-height: 1.2;
+    font-size: clamp(2rem, 5.5vw, 3.5rem);
+    line-height: 1.15;
     color: var(--c-text);
-    margin-bottom: 1rem;
-    letter-spacing: -0.01em;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.025em;
   }
 
   .article-date {
@@ -234,8 +234,8 @@ const {
   .article-body {
     font-family: var(--f-body);
     font-weight: 400;
-    font-size: 1.3rem;
-    line-height: 1.8;
+    font-size: 1.0625rem;
+    line-height: 1.85;
     color: var(--c-text);
     padding-bottom: 1rem;
   }
@@ -253,11 +253,8 @@ const {
     font-weight: 400;
     color: var(--c-text);
     display: block;
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
-    padding-bottom: 0.375rem;
-    border-bottom: 1px solid var(--c-border);
-    transition: border-color var(--t) var(--ease);
+    margin-top: 2.75rem;
+    margin-bottom: 0.5rem;
   }
 
   /* Hide the <br><br> immediately after each heading */
